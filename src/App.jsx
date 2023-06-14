@@ -1,14 +1,5 @@
-import Navbar from "/Navbar"
-import Productlist from "/Productlist"
-import ListadodeNav from "./ListadodeNav"
 function App() {
-
-  return <div>
-    <Navbar/>
-    <Productlist/>
-    <ListadodeNav/>
-    </div>
-
+  return <div></div>;
 }
 
-export default App
+export default App;
