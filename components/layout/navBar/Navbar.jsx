@@ -3,12 +3,12 @@ import "./NavBar.css";
 const Navbar = () => {
   return (
     <div className="contenedor">
+      <img
+        className="logo"
+        src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949692/CAJA_SIN_FONDO_gfxdzz.png"
+        alt="Juicy-Boy"
+      />
       <ul className="menu">
-        <img
-          className="logo"
-          src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949692/CAJA_SIN_FONDO_gfxdzz.png"
-          alt="Juicy-Boy"
-        />
         <a href="">
           <li>Remerones</li>
         </a>
