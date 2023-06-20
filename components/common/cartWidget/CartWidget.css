@@ -5,3 +5,8 @@
   justify-content: flex-end;
   align-self: flex-start;
 }
+.caja {
+  border-style: groove;
+  border-radius: 10px;
+  margin: 5px;
+}

@@ -6,7 +6,7 @@ function App() {
     <div>
       <Navbar />
       <Footer />
-      <ItemListContainer greeting="Bienvenidos a Coder-React 😊!" />
+      <ItemListContainer greeting="Bienvenidos a React somos Juicy Boy 😊!" />
     </div>
   );
 }
