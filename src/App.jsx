@@ -1,14 +1,11 @@
-import Navbar from "/Navbar"
-import Productlist from "/Productlist"
-import ListadodeNav from "./ListadodeNav"
+import Navbar from "../components/layout/navBar/Navbar";
+import Footer from "../components/layout/footer/Footer";
 function App() {
-
-  return <div>
-    <Navbar/>
-    <Productlist/>
-    <ListadodeNav/>
+  return (
+    <div>
+      <Navbar />
+      <Footer />
     </div>
-
+  );
 }
-
-export default App
+export default App;
