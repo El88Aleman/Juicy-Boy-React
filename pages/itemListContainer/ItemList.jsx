@@ -1,4 +1,4 @@
-const ItemList = (edad, setEdad, products, setProducts) => {
+const ItemList = ({ edad, setEdad, products, setProducts }) => {
   return (
     <div>
       <h1>Aca van los items</h1>
