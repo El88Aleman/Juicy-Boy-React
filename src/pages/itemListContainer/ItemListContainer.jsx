@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-const ItemListContainer = () => {
+const ItemListContainer = ({ numero }) => {
   const [products, setProducts] = useState([]);
 
   const [edad, setEdad] = useState(20);
 
-  console.log("se monto o se actualizo");
-
+  useEffect(() => {
+    console.log("llamando a una Api");
+    setProducts([{}, {}]);
+  }, []);
+  console.log("Se actualizo");
   return (
     <ItemList
       edad={edad}
