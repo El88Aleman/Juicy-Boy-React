@@ -1,8 +1,8 @@
-import Navbar from "../components/layout/navBar/Navbar";
-import Footer from "../components/layout/footer/Footer";
+import Navbar from "./components/layout/navBar/Navbar";
+import Footer from "./components/layout/footer/Footer";
 import { useState } from "react";
 import ItemListContainer from "./pages/itemListContainer/ItemListContainer";
-import CounterContainer from "../components/common/counter/CounterContainer";
+import CounterContainer from "./components/common/counter/CounterContainer";
 function App() {
   const [mostrarComponente, setMostrarComponente] = useState(false);
 
