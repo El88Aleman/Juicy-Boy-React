@@ -10,10 +10,10 @@ const Navbar = () => {
       />
       <ul className="menu">
         <a href="">
-          <li>Remerones</li>
+          <li>Remerones Oversize</li>
         </a>
         <a href="">
-          <li>Buzos</li>
+          <li>Buzos Oversize</li>
         </a>
       </ul>
       <CartWidget />
