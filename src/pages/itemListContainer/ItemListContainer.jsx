@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
+import { products } from "../../productsMock";
 import ItemList from "./ItemList";
-const ItemListContainer = ({ numero }) => {
-  const [products, setProducts] = useState([]);
 
-  const [edad, setEdad] = useState(20);
-
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  console.log(items);
   useEffect(() => {
-    console.log("llamando a una Api");
-    setProducts([{}, {}]);
+    const tarea = new Promise((resolve, reject) => {
+      resolve(products);
+      // reject("salio todo mal")
+    });
+
+    tarea
+      .then((respuesta) => setItems(respuesta))
+      .catch((error) => console.log(error));
+
+    // .finally(()=>console.log("hola"))
   }, []);
-  console.log("Se actualizo");
-  return (
-    <ItemList
-      edad={edad}
-      setEdad={setEdad}
-      products={products}
-      setProducts={setProducts}
-    />
-  );
+
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;

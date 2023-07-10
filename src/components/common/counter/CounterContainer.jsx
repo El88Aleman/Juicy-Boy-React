@@ -1,13 +1,15 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import useCounter from "../../utils/hooks/useCounter";
 
 const CounterContainer = ({ agregarAlCarrito, stock }) => {
-  const [counter, setCounter] = useState(1);
+  const { sumar, restar, counter } = useCounter(1, stock);
 
   return (
     <Counter
       counter={counter}
-      setCounter={setCounter}
+      sumar={sumar}
+      restar={restar}
       agregarAlCarrito={agregarAlCarrito}
       stock={stock}
     />

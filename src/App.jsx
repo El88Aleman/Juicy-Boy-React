@@ -1,16 +1,15 @@
-import Navbar from "./components/layout/navBar/Navbar";
-import Footer from "./components/layout/footer/Footer";
+import { BrowserRouter, Routes } from "react-router-dom";
 import ItemListContainer from "./pages/itemListContainer/ItemListContainer";
-import CounterContainer from "./components/common/counter/CounterContainer";
+import ItemDetailContainer from "./pages/itemDetail/ItemDetailContainer";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Footer />
-      <ItemListContainer />
-      <CounterContainer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/productos" element={<ItemListContainer />} />
+        <Route path="/itemDetail" element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;

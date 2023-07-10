@@ -1,10 +1,11 @@
-import CounterContainer from "../../components/common/counter/CounterContainer";
+import CounterContainer from "../../common/Counter/CounterContainer";
 
 const ItemDetail = ({ product, agregarAlCarrito }) => {
   return (
     <div>
-      <h4>{product.name}</h4>
-      <h6>{product.price}</h6>
+      <h1>{product.title}</h1>
+      <h3>{product.price}</h3>
+
       <CounterContainer
         stock={product.stock}
         agregarAlCarrito={agregarAlCarrito}

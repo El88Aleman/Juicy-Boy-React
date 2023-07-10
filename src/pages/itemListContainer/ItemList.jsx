@@ -1,13 +1,21 @@
-const ItemList = ({ edad, setEdad, products, setProducts }) => {
+import ProductCard from "../../components/common/productCard/ProductCard";
+
+const ItemList = ({ items }) => {
   return (
-    <div>
-      <h1>Aca van los items</h1>
-      <h2>{edad}</h2>
-      <button onClick={() => setEdad(edad + 1)}>Incrementar edad</button>
-      <button onClick={() => setProducts([...products, {}])}>
-        Agregar Producto
-      </button>
-    </div>
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        paddingTop: "50px",
+        gap: "20px",
+      }}
+    >
+      {items.map((item) => (
+        <ProductCard key={item.id} item={item} />
+      ))}
+    </section>
   );
 };
 

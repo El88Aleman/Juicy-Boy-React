@@ -51,7 +51,7 @@ export const products = [
     stock: 5,
     description: "Oversize",
     category: "Buzo",
-    img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949762/remeraAngelAtras_joeust.png",
+    img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949761/buzoBosqueFlashAdelante_dakvgd.jpg",
   },
   {
     id: 7,
@@ -60,6 +60,6 @@ export const products = [
     stock: 5,
     description: "Oversize",
     category: "Buzo",
-    img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949764/remeraBeisbol_daog0n.png",
+    img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949762/buzoLilaFlash_ogfbvj.jpg",
   },
 ];
