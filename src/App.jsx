@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./pages/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./pages/itemDetail/ItemDetailContainer";
 
