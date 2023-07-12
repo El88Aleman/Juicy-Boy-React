@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* import { useState } from "react";
 
 const Footer = ({ producto }) => {
   const [contador, setContador] = useState(0);
@@ -15,4 +15,4 @@ const Footer = ({ producto }) => {
   );
 };
 
-export default Footer;
+export default Footer; */

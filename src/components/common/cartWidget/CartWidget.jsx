@@ -1,14 +1,15 @@
-import { Badge } from "react-bootstrap";
+import { Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import "./CartWidget.css";
+
+import { Link } from "react-router-dom";
+
 const CartWidget = () => {
   return (
-    <div className="carrito">
-      <Badge badgeContent={12} color="primary">
-        <ShoppingCartIcon color="action" />
-        <span className="caja">3</span>
+    <Link to="/cart" style={{ color: "black" }}>
+      <Badge badgeContent={4} color="primary">
+        <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
       </Badge>
-    </div>
+    </Link>
   );
 };
 

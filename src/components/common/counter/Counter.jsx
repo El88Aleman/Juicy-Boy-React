@@ -1,27 +1,27 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
-import ItemListContainer from "../../../pages/itemListContainer/ItemListContainer";
+/* import { useState } from "react";
+import ItemListContainer from "../../../pages/itemListContainer/ItemListContainer"; */
 
 const Counter = ({
   counter,
-  setCounter,
+  /* setCounter, */
   agregarAlCarrito,
   stock,
   sumar,
   restar,
 }) => {
-  const [mostrarComponente, setMostrarComponente] = useState(false);
+  /*      const [mostrarComponente, setMostrarComponente] = useState(false);
 
-  const [numero, setNumero] = useState(0);
+  const [numero, setNumero] = useState(0);  */
   return (
     <div>
-      <div>
+      {/* {<div>
         <button onClick={() => setNumero(numero + 1)}>Sumar Numero</button>
         <button onClick={() => setMostrarComponente(!mostrarComponente)}>
           Montar/Desmontar
         </button>
         {mostrarComponente && <ItemListContainer />}
-      </div>
+      </div>} */}
       <div style={{ display: "flex" }}>
         <Button disabled={counter < 1} variant="contained" onClick={restar}>
           -

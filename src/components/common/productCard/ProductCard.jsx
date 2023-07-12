@@ -1,11 +1,34 @@
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import "./ProductCard.css";
+import { Link } from "react-router-dom";
+
 const ProductCard = ({ item }) => {
   return (
-    <div>
-      <h2>{item.title}</h2>
-      <h3>{item.price}</h3>
-      <h3>{item.description}</h3>
-      <img src={item.img} alt="" />
-    </div>
+    <Card sx={{ width: 300 }}>
+      <CardMedia sx={{ height: 500 }} image={item.img} title="green iguana" />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {item.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Link to={`/itemDetail/${item.id}`}>
+          <Button size="small" variant="contained">
+            Ver detalle
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
   );
 };
 
