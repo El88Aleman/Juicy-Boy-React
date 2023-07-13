@@ -38,7 +38,7 @@ export const products = [
   {
     id: 5,
     title: "Remeron Do Your Own Thing",
-    price: 16000,
+    price: 8500,
     stock: 5,
     description: "Estilo Oversize",
     category: "Negro",
@@ -47,7 +47,7 @@ export const products = [
   {
     id: 6,
     title: "Remeron Stubborn",
-    price: 16000,
+    price: 8500,
     stock: 5,
     description: "Estilo Oversize",
     category: "Negro",
@@ -65,7 +65,7 @@ export const products = [
   {
     id: 8,
     title: "Remeron Pounding Heart",
-    price: 16000,
+    price: 8500,
     stock: 5,
     description: "Estilo Oversize",
     category: "Blanco",

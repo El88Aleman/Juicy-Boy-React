@@ -16,8 +16,8 @@ const Navbar = () => {
 
         <ul className="categories">
           <Link to="/">Todas</Link>
-          <Link to="/category/Blancas">Blancas</Link>
-          <Link to="/category/Negras">Negras</Link>
+          <Link to="/category/Blanco">Blancas</Link>
+          <Link to="/category/Negro">Negras</Link>
         </ul>
 
         <CartWidget />
