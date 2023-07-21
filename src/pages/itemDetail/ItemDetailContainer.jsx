@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../components/cartContext/CartContext";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
 
   let { id } = useParams();
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     let promesa = new Promise((resolve, reject) => {
@@ -22,7 +24,7 @@ const ItemDetailContainer = () => {
       ...product,
       quantity: cantidad,
     };
-    console.log(data);
+    addToCart(data);
   };
 
   return <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} />;
