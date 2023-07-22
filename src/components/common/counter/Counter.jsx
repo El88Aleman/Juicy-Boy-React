@@ -1,42 +1,32 @@
 import { Button } from "@mui/material";
-/* import { useState } from "react";
-import ItemListContainer from "../../../pages/itemListContainer/ItemListContainer"; */
 
-const Counter = ({
-  counter,
-  /* setCounter, */
-  agregarAlCarrito,
-  stock,
-  sumar,
-  restar,
-}) => {
-  /*      const [mostrarComponente, setMostrarComponente] = useState(false);
-
-  const [numero, setNumero] = useState(0);  */
+const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
   return (
     <div>
-      {/* {<div>
-        <button onClick={() => setNumero(numero + 1)}>Sumar Numero</button>
-        <button onClick={() => setMostrarComponente(!mostrarComponente)}>
-          Montar/Desmontar
-        </button>
-        {mostrarComponente && <ItemListContainer />}
-      </div>} */}
       <div style={{ display: "flex" }}>
-        <Button disabled={counter < 1} variant="contained" onClick={restar}>
+        <Button
+          disabled={counter <= 1}
+          variant="contained"
+          onClick={() => setCounter(counter - 1)}
+        >
           -
         </Button>
         <h2>{counter}</h2>
-        <Button disabled={counter > stock} variant="contained" onClick={sumar}>
+        <Button
+          disabled={counter >= stock}
+          variant="contained"
+          onClick={() => setCounter(counter + 1)}
+        >
           +
         </Button>
       </div>
+      <br />
       <Button
         variant="contained"
         color="secondary"
         onClick={() => agregarAlCarrito(counter)}
       >
-        Agregar al Carrito
+        Agregar al carrito
       </Button>
     </div>
   );
