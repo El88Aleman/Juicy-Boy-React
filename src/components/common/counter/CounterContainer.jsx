@@ -6,7 +6,7 @@ const CounterContainer = ({
   stock,
   cantidadEnCarrito = 1,
 }) => {
-  const { counter, setCounter } = useState(cantidadEnCarrito);
+  const [counter, setCounter] = useState(cantidadEnCarrito);
 
   return (
     <Counter

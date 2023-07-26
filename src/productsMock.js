@@ -2,8 +2,7 @@ export const products = [
   {
     id: 1,
     title: "Remeron Abstract",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689165599/stvmpaxt627xr6qx7qla.jpg",
@@ -11,8 +10,7 @@ export const products = [
   {
     id: 2,
     title: "Remeron Metal Gun",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689165973/bt96shzc4hgrdpqvagvw.jpg",
@@ -20,8 +18,7 @@ export const products = [
   {
     id: 3,
     title: "Remeron Revolution",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689166163/zf25zvunabspnelqj7bj.jpg",
@@ -29,8 +26,7 @@ export const products = [
   {
     id: 4,
     title: "Remeron Full Dominion",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689166527/zwr9mfqcbmfazgeywwmk.jpg",
@@ -38,8 +34,7 @@ export const products = [
   {
     id: 5,
     title: "Remeron Do Your Own Thing",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689166902/dwtxezxdxsimd0jxafzl.jpg",
@@ -47,8 +42,7 @@ export const products = [
   {
     id: 6,
     title: "Remeron Stubborn",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Negro",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689167013/r3s90ahmhfyssnhgje1b.jpg",
@@ -56,8 +50,7 @@ export const products = [
   {
     id: 7,
     title: "Remeron The Rose",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Blanco",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689167338/hr38owfqdmugljsm9vet.jpg",
@@ -65,8 +58,7 @@ export const products = [
   {
     id: 8,
     title: "Remeron Pounding Heart",
-    price: 8500,
-    stock: 5,
+    price: 8900,
     description: "Estilo Oversize",
     category: "Blanco",
     img: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1689167337/bvnl2bcipgsa4fjyzplc.jpg",

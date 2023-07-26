@@ -1,8 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../components/cartContext/CartContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { db } from "../../fireBaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -12,13 +15,11 @@ const ItemDetailContainer = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
 
   let cantidadEnCarrito = getQuantityById(id);
-  useEffect(() => {
-    let promesa = new Promise((resolve, reject) => {
-      let productSelected = products.find((product) => product.id === +id);
-      resolve(productSelected);
-    });
 
-    promesa.then((res) => setProduct(res)).catch((err) => console.log(err));
+  useEffect(() => {
+    let refCollection = collection(db, "products");
+    let refDoc = doc(refCollection, id);
+    getDoc(refDoc).then((res) => setProduct({ ...res.data(), id: res.id }));
   }, [id]);
 
   const agregarAlCarrito = (cantidad) => {
@@ -27,14 +28,27 @@ const ItemDetailContainer = () => {
       quantity: cantidad,
     };
     addToCart(data);
+    toast.success("Se agrego al carrito", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
-    <ItemDetail
-      product={product}
-      agregarAlCarrito={agregarAlCarrito}
-      cantidadEnCarrito={cantidadEnCarrito}
-    />
+    <>
+      <ItemDetail
+        product={product}
+        agregarAlCarrito={agregarAlCarrito}
+        cantidadEnCarrito={cantidadEnCarrito}
+      />
+      <ToastContainer />
+    </>
   );
 };
 
