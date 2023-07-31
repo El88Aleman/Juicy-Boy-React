@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  let userRol = "customer";
   return (
     <div>
       <div className={"containerNavbar"}>
@@ -19,7 +20,7 @@ const Navbar = () => {
           <Link to="/category/Blanco">Blancas</Link>
           <Link to="/category/Negro">Negras</Link>
         </ul>
-
+        {userRol === "admin" && <Link to="/dashboard">ADMIN</Link>}
         <CartWidget />
       </div>
     </div>
