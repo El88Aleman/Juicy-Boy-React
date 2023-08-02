@@ -14,16 +14,28 @@ const ProductCard = ({ item }) => {
     <Card sx={{ width: 300 }}>
       <CardMedia sx={{ height: 500 }} image={item.img} title="green iguana" />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography
+          style={{ fontFamily: "bitwise", height: "10vh" }}
+          gutterBottom
+          variant="h5"
+          component="div"
+        >
           {item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          style={{ fontFamily: "bitwise", fontSize: "20px", height: "5vh" }}
+          variant="body2"
+          color="text.primary"
+        >
           {item.description}
         </Typography>
       </CardContent>
       <CardActions>
         <Link to={`/itemDetail/${item.id}`}>
-          <Button size="small" variant="contained">
+          <Button
+            style={{ fontFamily: "bitwise", fontSize: "15px" }}
+            variant="contained"
+          >
             Ver detalle
           </Button>
         </Link>

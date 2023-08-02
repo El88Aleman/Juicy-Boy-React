@@ -13,7 +13,10 @@ const CartWidget = () => {
     <div className="carrito">
       <Link to="/cart" style={{ color: "black" }}>
         <Badge badgeContent={total} color="primary" showZero>
-          <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+          <ShoppingCartIcon
+            color="main"
+            sx={{ fontSize: 40, fontFamily: "bitwise" }}
+          />
         </Badge>
       </Link>
     </div>

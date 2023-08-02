@@ -31,20 +31,44 @@ const CartContainer = () => {
         return (
           <div
             key={elemento.id}
-            style={{ width: "200px", border: "2px solid steelblue" }}
+            style={{
+              width: "200px",
+              border: "2px solid steelblue",
+              fontFamily: "bitwise",
+              margin: "10px",
+            }}
           >
-            <h3>{elemento.title}</h3>
-            <h3>{elemento.price}</h3>
-            <h4>Cantidad:{elemento.quantity}</h4>
-            <button onClick={() => deleteById(elemento.id)}>Eliminar</button>
+            <h3 style={{ margin: "5px" }}>{elemento.title}</h3>
+            <h3 style={{ margin: "5px" }}>{elemento.price}</h3>
+            <h3 style={{ margin: "5px" }}>Cantidad:{elemento.quantity}</h3>
+            <Button
+              variant="outlined"
+              style={{ margin: "5px" }}
+              onClick={() => deleteById(elemento.id)}
+            >
+              Eliminar
+            </Button>
           </div>
         );
       })}
-      {cart.length > 0 && <button onClick={limpiar}>Limpiar Carrito</button>}
+      {cart.length > 0 && (
+        <Button variant="outlined" style={{ margin: "5px" }} onClick={limpiar}>
+          Limpiar Carrito
+        </Button>
+      )}
       <Link to="/formik">
-        <Button variant="outlined">Terminar Compra</Button>
+        <Button variant="outlined" style={{ margin: "5px" }}>
+          Terminar Compra
+        </Button>
       </Link>
-      <h2>El total del carrito es:${total}</h2>
+      <h2
+        style={{
+          fontFamily: "bitwise",
+          margin: "5px",
+        }}
+      >
+        El total del carrito es:${total}
+      </h2>
     </div>
   );
 };

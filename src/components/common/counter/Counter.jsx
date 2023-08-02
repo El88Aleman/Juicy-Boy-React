@@ -11,7 +11,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
         >
           -
         </Button>
-        <h2>{counter}</h2>
+        <h2 style={{ margin: "5px" }}>{counter}</h2>
         <Button
           disabled={counter >= stock}
           variant="contained"
@@ -22,6 +22,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       </div>
       <br />
       <Button
+        style={{ fontFamily: "bitwise" }}
         variant="contained"
         color="secondary"
         onClick={() => agregarAlCarrito(counter)}
