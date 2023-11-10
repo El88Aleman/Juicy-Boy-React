@@ -1,13 +1,14 @@
-import Navbar from "../components/layout/navBar/Navbar";
-import Footer from "../components/layout/footer/Footer";
-import ItemListContainer from "../components/itemListContainer/ItemListContainer";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
+import CartContextComponent from "./components/cartContext/CartContext";
+
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Footer />
-      <ItemListContainer greeting="Bienvenidos a React somos Juicy Boy 😊!" />
-    </div>
+    <BrowserRouter>
+      <CartContextComponent>
+        <AppRouter />
+      </CartContextComponent>
+    </BrowserRouter>
   );
 }
 export default App;
