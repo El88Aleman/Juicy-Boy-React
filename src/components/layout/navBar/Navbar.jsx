@@ -15,9 +15,15 @@ const Navbar = () => {
       </Link>
 
       <ul className="categories">
-        <Link to="/">Todas</Link>
-        <Link to="/category/Blanco">Blancas</Link>
-        <Link to="/category/Negro">Negras</Link>
+        <span className="menu">
+          <a href="/">TODAS</a>
+        </span>
+        <span className="menu">
+          <a href="/category/Blanco">BLANCAS</a>
+        </span>
+        <span className="menu">
+          <a href="/category/Negro">NEGRAS</a>
+        </span>
       </ul>
       {userRol === "admin" && <Link to="/dashboard">ADMIN</Link>}
       <CartWidget />

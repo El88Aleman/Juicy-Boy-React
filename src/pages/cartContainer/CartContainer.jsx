@@ -7,6 +7,7 @@ import { Button } from "@mui/material";
 const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice } =
     useContext(CartContext);
+
   let limpiar = () => {
     Swal.fire({
       title: "Estas seguro de eliminar todo el carrito?",
@@ -19,6 +20,7 @@ const CartContainer = () => {
       if (result.isConfirmed) {
         clearCart();
         Swal.fire("Carrito eliminado con exito", "", "success");
+        window.location.assign("/");
       } else if (result.isDenied) {
         Swal.fire("La compra sigue en funcionamiento", "", "info");
       }
@@ -32,18 +34,24 @@ const CartContainer = () => {
           <div
             key={elemento.id}
             style={{
-              width: "200px",
+              width: "250px",
               border: "2px solid steelblue",
               fontFamily: "bitwise",
               margin: "10px",
             }}
           >
             <h3 style={{ margin: "5px" }}>{elemento.title}</h3>
-            <h3 style={{ margin: "5px" }}>{elemento.price}</h3>
-            <h3 style={{ margin: "5px" }}>Cantidad:{elemento.quantity}</h3>
+            <h3 style={{ margin: "5px" }}>${elemento.price}</h3>
+            <h3 style={{ margin: "5px" }}>Cantidad: {elemento.quantity}</h3>
             <Button
               variant="outlined"
-              style={{ margin: "5px" }}
+              style={{
+                margin: "5px",
+                backgroundColor: "#e66fdd",
+                color: "black",
+                fontFamily: "bitwise",
+                fontSize: "15px",
+              }}
               onClick={() => deleteById(elemento.id)}
             >
               Eliminar
@@ -52,22 +60,43 @@ const CartContainer = () => {
         );
       })}
       {cart.length > 0 && (
-        <Button variant="outlined" style={{ margin: "5px" }} onClick={limpiar}>
+        <Button
+          variant="contained"
+          style={{
+            margin: "5px",
+            backgroundColor: "#e66fdd",
+            color: "black",
+            fontFamily: "bitwise",
+            fontSize: "15px",
+          }}
+          onClick={limpiar}
+        >
           Limpiar Carrito
         </Button>
       )}
-      <Link to="/formik">
-        <Button variant="outlined" style={{ margin: "5px" }}>
-          Terminar Compra
-        </Button>
-      </Link>
+      {cart.length > 0 && (
+        <Link to="/formik">
+          <Button
+            variant="contained"
+            style={{
+              margin: "5px",
+              backgroundColor: "#e66fdd",
+              color: "black",
+              fontFamily: "bitwise",
+              fontSize: "15px",
+            }}
+          >
+            Terminar Compra
+          </Button>
+        </Link>
+      )}
       <h2
         style={{
           fontFamily: "bitwise",
           margin: "5px",
         }}
       >
-        El total del carrito es:${total}
+        El total del carrito es: ${total}
       </h2>
     </div>
   );

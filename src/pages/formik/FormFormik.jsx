@@ -13,7 +13,7 @@ import { db } from "../../fireBaseConfig";
 import { CartContext } from "../../components/cartContext/CartContext";
 
 const FormFormik = () => {
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
 
   let total = getTotalPrice();
@@ -36,7 +36,10 @@ const FormFormik = () => {
         date: serverTimestamp(),
       };
       let ordersCollections = collection(db, "orders");
-      addDoc(ordersCollections, order).then((res) => setOrderId(res.id));
+      addDoc(ordersCollections, order).then((res) => {
+        setOrderId(res.id);
+        clearCart();
+      });
 
       cart.forEach((elemento) => {
         updateDoc(doc(db, "products", elemento.id), {
@@ -72,10 +75,23 @@ const FormFormik = () => {
   });
 
   return (
-    <div style={{ padding: "40px" }}>
+    <div
+      style={{
+        padding: "40px",
+      }}
+    >
       {!orderId ? (
-        <form onSubmit={handleSubmit}>
+        <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onSubmit={handleSubmit}
+        >
           <TextField
+            style={{ margin: "5px" }}
             label="Correo Electronico"
             variant="outlined"
             name="correoElectronico"
@@ -84,6 +100,7 @@ const FormFormik = () => {
             helperText={errors.correoElectronico}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="Nombre y Apellido"
             variant="outlined"
             name="nombreApellido"
@@ -92,6 +109,7 @@ const FormFormik = () => {
             helperText={errors.nombreApellido}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="Ciudad"
             variant="outlined"
             name="ciudad"
@@ -100,6 +118,7 @@ const FormFormik = () => {
             helperText={errors.ciudad}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="Provincia"
             variant="outlined"
             name="provincia"
@@ -108,6 +127,7 @@ const FormFormik = () => {
             helperText={errors.provincia}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="Direccion"
             variant="outlined"
             name="direccion"
@@ -116,6 +136,7 @@ const FormFormik = () => {
             helperText={errors.direccion}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="CP"
             variant="outlined"
             name="cp"
@@ -124,6 +145,7 @@ const FormFormik = () => {
             helperText={errors.cp}
           />
           <TextField
+            style={{ margin: "5px" }}
             label="Telefono"
             variant="outlined"
             name="telefono"
@@ -131,7 +153,16 @@ const FormFormik = () => {
             error={errors.telefono ? true : false}
             helperText={errors.telefono}
           />
-          <Button type="submit" variant="contained">
+          <Button
+            style={{
+              margin: "10px",
+              backgroundColor: "#e66fdd",
+              color: "black",
+              fontFamily: "bitwise",
+            }}
+            type="submit"
+            variant="contained"
+          >
             Comprar
           </Button>
         </form>

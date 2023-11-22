@@ -6,13 +6,17 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{ width: 300 }}>
-      <CardMedia sx={{ height: 500 }} image={item.img} title="green iguana" />
+    <Card style={{ textAlign: "center" }} sx={{ width: 300 }}>
+      <CardMedia
+        sx={{ height: 500 }}
+        image={item.img}
+        key={item.id}
+        title="Juicy-Boy"
+      />
       <CardContent>
         <Typography
           style={{ fontFamily: "bitwise", height: "10vh" }}
@@ -30,10 +34,15 @@ const ProductCard = ({ item }) => {
           {item.description}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions style={{ display: "flex", justifyContent: "center" }}>
         <Link to={`/itemDetail/${item.id}`}>
           <Button
-            style={{ fontFamily: "bitwise", fontSize: "15px" }}
+            style={{
+              fontFamily: "bitwise",
+              fontSize: "15px",
+              backgroundColor: "#e66fdd",
+              color: "black",
+            }}
             variant="contained"
           >
             Ver detalle

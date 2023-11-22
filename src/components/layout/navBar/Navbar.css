@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #e66fdd;
+  text-decoration: none;
 }
 .logo {
   height: 400px;
@@ -15,12 +16,26 @@
 .categories {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  list-style: none;
-  gap: 20px;
+  gap: 150px;
   font-size: 30px;
   font-family: bitwise;
+  color: white;
+  text-decoration: none;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+  display: inline-flex;
+  transition: 0.2s;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+  text-shadow: 0 0 4px black;
+}
+.menu a:hover {
+  text-shadow: 0 0 5px white; /* Efecto de brillo al pasar el mouse */
+  transition-delay: 0.5s;
 }
 @font-face {
   font-family: bitwise;

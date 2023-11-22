@@ -15,6 +15,9 @@ const styles = {
     padding: "20px 0",
     marginTop: "50px",
     textAlign: "center",
+    position: "static",
+    bottom: 0,
+    width: "100%",
   },
   container: {
     maxWidth: "1200px",
