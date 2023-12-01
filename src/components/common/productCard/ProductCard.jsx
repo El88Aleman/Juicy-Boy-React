@@ -11,12 +11,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   return (
     <Card style={{ textAlign: "center" }} sx={{ width: 300 }}>
-      <CardMedia
-        sx={{ height: 500 }}
-        image={item.img}
-        key={item.id}
-        title="Juicy-Boy"
-      />
+      <CardMedia sx={{ height: 500 }} image={item.img} title="Juicy-Boy" />
       <CardContent>
         <Typography
           style={{ fontFamily: "bitwise", height: "10vh" }}
