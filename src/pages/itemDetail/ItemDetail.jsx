@@ -11,6 +11,7 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
       style={{
         fontFamily: "bitwise",
         margin: "10px",
+        textAlign: "center",
       }}
     >
       <h1 style={{ padding: "5px" }}>{product.title}</h1>
@@ -20,13 +21,12 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
             height: "250px",
             width: "175px",
             borderRadius: "20px",
-            marginLeft: "60px",
           }}
           src={product.img[0]}
           alt="Juicy-Boy"
         />
       )}
-      <h3 style={{ padding: "10px", marginLeft: "80px" }}>${product.price}</h3>
+      <h3 style={{ padding: "10px" }}>${product.price}</h3>
       {/* <div
         style={{
           marginLeft: "40px",
