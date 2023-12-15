@@ -6,6 +6,7 @@ const Navbar = () => {
   let userRol = "customer";
   return (
     <div className={"containerNavbar"}>
+      <CartWidget />
       <Link to="/">
         <img
           className="logo"
@@ -26,7 +27,6 @@ const Navbar = () => {
         </span>
       </ul>
       {userRol === "admin" && <Link to="/dashboard">ADMIN</Link>}
-      <CartWidget />
     </div>
   );
 };

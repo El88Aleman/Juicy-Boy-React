@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../components/cartContext/CartContext";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../fireBaseConfig";
+import Toastify from "toastify-js";
 import { getDoc, collection, doc } from "firebase/firestore";
+import { ToastContainer } from "react-bootstrap";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -28,16 +28,21 @@ const ItemDetailContainer = () => {
       quantity: cantidad,
     };
     addToCart(data);
-    toast.success("Se agrego al carrito", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    Toastify({
+      text: "Se agrego al carrito",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "white",
+        color: "#e66fdd",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
   };
 
   return (

@@ -15,9 +15,11 @@
 }
 .categories {
   display: flex;
+  flex: 1;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  gap: 150px;
+  gap: 70px;
   font-size: 30px;
   font-family: bitwise;
   color: white;
@@ -35,9 +37,37 @@
 }
 .menu a:hover {
   text-shadow: 0 0 5px white; /* Efecto de brillo al pasar el mouse */
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
+.carrito {
+  position: absolute;
+  top: 10px; /* Ajusta según sea necesario */
+  right: 10px; /* Ajusta según sea necesario */
+  margin: 10px; /* Ajusta el margen según tus preferencias */
+}
+
 @font-face {
   font-family: bitwise;
   src: url(../../../../public/tipografias/bitwise.ttf);
+}
+@media screen and (max-width: 1024px) {
+  .containerNavbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e66fdd;
+    text-decoration: none;
+  }
+  .categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    font-family: bitwise;
+    color: white;
+    text-decoration: none;
+  }
 }

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { CartContext } from "../../components/cartContext/CartContext";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const CartContainer = () => {
-  const { cart, clearCart, deleteById, getTotalPrice } =
+  const { cart, clearCart, deleteById, getTotalPrice, addToCart } =
     useContext(CartContext);
 
   let limpiar = () => {
@@ -20,13 +20,16 @@ const CartContainer = () => {
       if (result.isConfirmed) {
         clearCart();
         Swal.fire("Carrito eliminado con exito", "", "success");
-        window.location.assign("/");
+        navigate("/");
       } else if (result.isDenied) {
         Swal.fire("La compra sigue en funcionamiento", "", "info");
       }
     });
   };
   let total = getTotalPrice();
+
+  const navigate = useNavigate("/");
+
   return (
     <div>
       {cart.map((elemento) => {
@@ -54,7 +57,33 @@ const CartContainer = () => {
               }}
               onClick={() => deleteById(elemento.id)}
             >
-              Eliminar
+              -
+            </Button>
+            <Button
+              variant="outlined"
+              style={{
+                margin: "5px",
+                backgroundColor: "#e66fdd",
+                color: "black",
+                fontFamily: "bitwise",
+                fontSize: "15px",
+              }}
+              onClick={() => {
+                const newQuantity = elemento.quantity + 1;
+                const isWithinStock = newQuantity <= elemento.stock;
+
+                if (isWithinStock) {
+                  addToCart({
+                    ...elemento,
+                    quantity: newQuantity,
+                  });
+                } else {
+                  // Muestra un mensaje o toma alguna acción si la cantidad excede el stock
+                  Swal.fire("Estas queriendo superar la cantidad disponible!");
+                }
+              }}
+            >
+              +
             </Button>
           </div>
         );

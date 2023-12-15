@@ -16,17 +16,21 @@ const ProductCard = ({ item }) => {
   const [sliderImage, setSliderImage] = useState(0);
 
   const siguienteImagen = () => {
-    setSliderImage(sliderImage === item.img - 1 ? 0 : sliderImage + 1);
+    setSliderImage(sliderImage === item.img.length - 1 ? 0 : sliderImage + 1);
   };
 
   const anteriorImagen = () => {
-    setSliderImage(sliderImage === 0 ? item.img - 1 : sliderImage - 1);
+    setSliderImage(sliderImage === 0 ? item.img.length - 1 : sliderImage - 1);
   };
 
   return (
     <Card style={{ textAlign: "center" }} sx={{ width: 300 }}>
       <div style={{ position: "relative", width: "100%" }}>
-        <CardMedia sx={{ height: 500 }} image={item.img} title="Juicy-Boy" />
+        <CardMedia
+          sx={{ height: 500 }}
+          image={item.img[sliderImage]}
+          title="Juicy-Boy"
+        />
         <div>
           <span
             className="back"

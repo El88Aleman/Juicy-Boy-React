@@ -1,32 +1,19 @@
-const Footer = () => {
-  return (
-    <footer style={styles.footer}>
-      <div style={styles.container}>
-        <p style={styles.text}>&copy; {new Date().getFullYear()} Juicy Boy</p>
-      </div>
-    </footer>
-  );
-};
+import { Link } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa";
+import "./Footer.css";
 
-const styles = {
-  footer: {
-    fontFamily: "bitwise",
-    backgroundColor: "#E66FDD",
-    padding: "20px 0",
-    marginTop: "50px",
-    textAlign: "center",
-    position: "static",
-    bottom: 0,
-    width: "100%",
-  },
-  container: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-  },
-  text: {
-    fontSize: "20px",
-    color: "#010001",
-  },
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  return (
+    <div className="footer">
+      <h3 className="titulo">© 2023 Juicy Boy</h3>
+      <Link className="flecha" onClick={scrollToTop}>
+        <FaArrowUp size={25} />
+      </Link>
+    </div>
+  );
 };
 
 export default Footer;

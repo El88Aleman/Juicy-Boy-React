@@ -1,4 +1,6 @@
 import { Button } from "@mui/material";
+import { IoMdAdd } from "react-icons/io";
+import { RiSubtractFill } from "react-icons/ri";
 
 const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
   return (
@@ -6,7 +8,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       <div
         style={{
           display: "flex",
-          marginLeft: "65px",
+          marginLeft: "80px",
         }}
       >
         <Button
@@ -15,7 +17,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
           variant="contained"
           onClick={() => setCounter(counter - 1)}
         >
-          -
+          <RiSubtractFill size={20} />
         </Button>
         <h2 style={{ margin: "5px" }}>{counter}</h2>
         <Button
@@ -24,14 +26,14 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
           variant="contained"
           onClick={() => setCounter(counter + 1)}
         >
-          +
+          <IoMdAdd size={20} />
         </Button>
       </div>
       <br />
       <Button
         style={{
           fontFamily: "bitwise",
-          marginLeft: "50px",
+          marginLeft: "70px",
           color: "black",
           backgroundColor: "#e66fdd",
         }}

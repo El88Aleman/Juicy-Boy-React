@@ -1,9 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
+const carritoInicial = JSON.parse(localStorage.getItem("cart")) || [];
+
 const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(carritoInicial);
 
   // 5
   const addToCart = (product) => {
@@ -13,7 +15,7 @@ const CartContextComponent = ({ children }) => {
         if (product.id === elemento.id) {
           return {
             ...elemento,
-            quantity: elemento.quantity + product.quantity,
+            quantity: product.quantity,
           };
         } else {
           return elemento;
@@ -29,11 +31,29 @@ const CartContextComponent = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
-
   const deleteById = (id) => {
+    const targetProduct = cart.find((elemento) => elemento.id === id);
+
+    if (targetProduct) {
+      // Si la cantidad es mayor a 1, disminuye la cantidad en 1
+      if (targetProduct.quantity > 1) {
+        const newArr = cart.map((elemento) =>
+          elemento.id === id
+            ? { ...elemento, quantity: elemento.quantity - 1 }
+            : elemento
+        );
+        setCart(newArr);
+      } else {
+        // Si la cantidad es 1, elimina el producto completamente
+        const newArr = cart.filter((elemento) => elemento.id !== id);
+        setCart(newArr);
+      }
+    }
+  };
+  /* const deleteById = (id) => {
     let newArr = cart.filter((elemento) => elemento.id !== id);
     setCart(newArr);
-  };
+  }; */
   const getTotalQuantity = () => {
     let total = cart.reduce((acc, elemento) => {
       return acc + elemento.quantity;
@@ -48,7 +68,7 @@ const CartContextComponent = ({ children }) => {
   };
   const getQuantityById = (id) => {
     let producto = cart.find((elemento) => elemento.id === +id);
-    return producto?.quiantity;
+    return producto?.quantity;
   };
   let data = {
     cart,
@@ -59,6 +79,10 @@ const CartContextComponent = ({ children }) => {
     getTotalPrice,
     getQuantityById,
   };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
