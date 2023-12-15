@@ -8,7 +8,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       <div
         style={{
           display: "flex",
-          marginLeft: "80px",
+          marginLeft: "70px",
         }}
       >
         <Button
@@ -33,7 +33,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       <Button
         style={{
           fontFamily: "bitwise",
-          marginLeft: "70px",
+          marginLeft: "50px",
           color: "black",
           backgroundColor: "#e66fdd",
         }}
