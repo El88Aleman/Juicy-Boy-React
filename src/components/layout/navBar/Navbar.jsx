@@ -10,7 +10,7 @@ const Navbar = () => {
       <Link to="/">
         <img
           className="logo"
-          src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1686949692/CAJA_SIN_FONDO_gfxdzz.png"
+          src="https://firebasestorage.googleapis.com/v0/b/juicy-boy.appspot.com/o/Juicy-Boy%2Fjuicy-boy-sinFondo.png?alt=media&token=ff012bbc-29a9-4645-a501-2d40ae3d5355"
           alt="Juicy-Boy"
         />
       </Link>
